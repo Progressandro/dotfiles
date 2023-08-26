@@ -43,4 +43,6 @@ return require('packer').startup(function(use)
 
     -- tmux plugin
     use('christoomey/vim-tmux-navigator')
+    -- Copilot plugin
+    use('github/copilot.vim')
 end)
