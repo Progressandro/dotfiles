@@ -53,11 +53,19 @@ return require('packer').startup(function(use)
             { 'nvim-tree/nvim-web-devicons' },
         },
     }
-
     use {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
     }
+    use {
+        'NeogitOrg/neogit',
+        requires = {
+            {"nvim-lua/plenary.nvim"},         -- required
+            {"nvim-telescope/telescope.nvim"}, -- optional
+            {"sindrets/diffview.nvim"},        -- optional
+            {"ibhagwan/fzf-lua"},              -- optional
+        }
+}
 end)
