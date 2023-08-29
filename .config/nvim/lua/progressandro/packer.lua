@@ -45,4 +45,13 @@ return require('packer').startup(function(use)
     use('christoomey/vim-tmux-navigator')
     -- Copilot plugin
     use('github/copilot.vim')
+    use {
+        'NeogitOrg/neogit',
+        requires = {
+            {"nvim-lua/plenary.nvim"},         -- required
+            {"nvim-telescope/telescope.nvim"}, -- optional
+            {"sindrets/diffview.nvim"},        -- optional
+            {"ibhagwan/fzf-lua"},              -- optional
+        }
+}
 end)
