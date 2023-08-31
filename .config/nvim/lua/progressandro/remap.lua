@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, { silent = true })
 -- Navigation
 vim.keymap.set("i", "jj", "<Esc>")
 -- Move current line / block of text in visual mode
