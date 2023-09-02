@@ -60,15 +60,6 @@ return require('packer').startup(function(use)
         end
     }
     use {
-        'NeogitOrg/neogit',
-        requires = {
-            { "nvim-lua/plenary.nvim" },       -- required
-            { "nvim-telescope/telescope.nvim" }, -- optional
-            { "sindrets/diffview.nvim" },      -- optional
-            { "ibhagwan/fzf-lua" },            -- optional
-        }
-    }
-    use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
