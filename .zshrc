@@ -111,6 +111,7 @@ bindkey '^I^I' autosuggest-accept
 alias c="clear"
 alias nvconfig="nvim ~/.config/nvim"
 alias ys="yadm status"
+alias yp="yadm push"
 alias yam="yadm add $(yadm ls-files -m)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
