@@ -110,6 +110,7 @@ bindkey '^I^I' autosuggest-accept
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
 alias nvconfig="nvim ~/.config/nvim"
+alias ys="yadm status"
+alias yam="yadm add $(yadm ls-files -m)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
