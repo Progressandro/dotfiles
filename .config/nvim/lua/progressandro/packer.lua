@@ -13,12 +13,13 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    use { "catppuccin/nvim", as = "catppuccin" }
-
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+
+    -- Catpuccin theme
+    use { "catppuccin/nvim", as = "catppuccin" }
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -53,15 +54,16 @@ return require('packer').startup(function(use)
             { 'nvim-tree/nvim-web-devicons' },
         },
     }
+    -- Comment
     use {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
     }
+    -- Lualine
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use('vimpostor/vim-tpipeline')
 end)
