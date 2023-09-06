@@ -73,4 +73,9 @@ return require('packer').startup(function(use)
             { 'jose-elias-alvarez/null-ls.nvim' },
         }
     }
+    use {
+	    "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+    use('lewis6991/gitsigns.nvim')
 end)
