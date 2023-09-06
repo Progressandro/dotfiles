@@ -66,4 +66,11 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
+    use {
+        'MunifTanjim/prettier.nvim',
+        requires = {
+            { 'neovim/nvim-lspconfig' },
+            { 'jose-elias-alvarez/null-ls.nvim' },
+        }
+    }
 end)
