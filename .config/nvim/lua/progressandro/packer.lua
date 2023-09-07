@@ -22,4 +22,11 @@ return require('packer').startup(function(use)
   }
   use 'vimpostor/vim-tpipeline'
   use 'mbbill/undotree'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {
+        'folke/trouble.nvim',
+        requires = {
+            { 'nvim-tree/nvim-web-devicons' },
+        },
+  }
 end)
