@@ -20,4 +20,6 @@ return require('packer').startup(function(use)
       'nvim-tree/nvim-web-devicons', opt = true 
     }
   }
+  use 'vimpostor/vim-tpipeline'
+  use 'mbbill/undotree'
 end)
