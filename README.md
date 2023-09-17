@@ -1,4 +1,4 @@
-# Progressandro's Coding Environment 🧑🏻‍💻
+# Progressandro's Coding Environment configs 🧑🏻‍💻
 Custom dotfiles designed exclusively for personal efficiency
 
 ## Tools:
