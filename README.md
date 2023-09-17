@@ -2,8 +2,8 @@
 Custom dotfiles designed exclusively for personal efficiency
 
 ## Tools:
-- Neovim (Editor)
-- Kitty + zsh + tmux (Terminal)
-- Yabai (Window manager)
-- skhd (Keyboard shortcuts)
-- Karabiner (Keyboard remaps)
+- [neovim](neovim.md) (Editor)
+- [kitty](kitty.md) + [zsh](zsh.md) + tmux[tmux.md] (Terminal)
+- [yabai](yabai.md) (Window manager)
+- [skhd](skhd.md) (Keyboard shortcuts)
+- [karabiner](karabiner.md) (Keyboard remaps)
