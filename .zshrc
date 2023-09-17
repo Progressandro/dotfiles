@@ -116,3 +116,10 @@ alias yam="cd ~ && yadm add $(yadm ls-files -m)"
 alias yanv="yadm add ~/.config/nvim/*"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# bun completions
+[ -s "/Users/progressandro/.bun/_bun" ] && source "/Users/progressandro/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
