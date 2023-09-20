@@ -11,7 +11,7 @@ return require("packer").startup(function(use)
 	})
 	use({
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "dev-v3",
+		branch = "v3.x",
 		requires = {
 			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
@@ -64,4 +64,6 @@ return require("packer").startup(function(use)
 		requires = "nvim-lua/plenary.nvim",
 	})
 	use("github/copilot.vim")
+	use("akinsho/git-conflict.nvim")
+  use("hrsh7th/cmp-nvim-lsp-signature-help")
 end)
