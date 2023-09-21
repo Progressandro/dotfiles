@@ -114,6 +114,9 @@ alias ys="yadm status"
 alias yp="yadm push"
 alias yam="cd ~ && yadm add $(yadm ls-files -m)"
 alias yanv="yadm add ~/.config/nvim/*"
+alias kccf="lsof -i tcp:3000 | awk 'NR!=1 {print $2}' | xargs kill" 
+alias kccb="lsof -i tcp:8080 | awk 'NR!=1 {print $2}' | xargs kill"
+alias kcc="kccf && kccb"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
@@ -123,3 +126,13 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Created by `pipx` on 2023-09-21 14:38:06
+export PATH="$PATH:/Users/progressandro-cc/Library/Python/3.11/bin"
+
+# Created by `pipx` on 2023-09-21 14:38:07
+export PATH="$PATH:/Users/progressandro-cc/.local/bin"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
