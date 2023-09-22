@@ -1,9 +1,9 @@
-function UpdateTheme() 
-	color = colors or "catppuccin"
-	vim.cmd.colorscheme(color)
+require("catppuccin").setup({
+	transparent_background = true,
+})
 
-	vim.api.nvim_set_hl(0, "normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "normalFloat", { bg = "none" })
-end
+color = colors or "catppuccin"
+vim.cmd.colorscheme(color)
 
-UpdateTheme()
+vim.api.nvim_set_hl(0, "normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "normalFloat", { bg = "none" })
