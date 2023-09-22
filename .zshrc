@@ -73,7 +73,7 @@ plugins=(git zsh-autosuggestions tmux)
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
-
+source $HOME/.zshrc.private
 # User configuration
 
 if type rg &> /dev/null; then
@@ -117,6 +117,7 @@ alias yanv="yadm add ~/.config/nvim/*"
 alias kccf="lsof -i tcp:3000 | awk 'NR!=1 {print $2}' | xargs kill" 
 alias kccb="lsof -i tcp:8080 | awk 'NR!=1 {print $2}' | xargs kill"
 alias kcc="kccf && kccb"
+alias ccm="cd ~/repositories/main-combocurve"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
