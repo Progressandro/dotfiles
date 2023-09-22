@@ -61,5 +61,5 @@ ctrl + alt - s : yabai --start-service
 ctrl + alt - r : yabai --restart-service
 # Open app shortcuts
 # # Open terminal.
-cmd + shift - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na kitty
+cmd + shift - return : osascript -e 'tell application "alacritty" to create window' || open -na alacritty
 
