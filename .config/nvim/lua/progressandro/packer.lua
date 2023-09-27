@@ -69,4 +69,10 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use("Progressandro/jiratina.nvim")
 	use("folke/neodev.nvim")
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
 end)
