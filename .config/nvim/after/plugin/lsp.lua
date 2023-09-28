@@ -1,5 +1,14 @@
 local lsp_zero = require("lsp-zero")
 
+local function organize_imports()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = { vim.api.nvim_buf_get_name(0) },
+		title = "",
+	}
+	vim.lsp.buf.execute_command(params)
+end
+
 lsp_zero.on_attach(function(client, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
@@ -25,6 +34,16 @@ require("mason-lspconfig").setup({
 	ensure_installed = {},
 	handlers = {
 		lsp_zero.default_setup,
+		tsserver = function()
+			require("lspconfig").tsserver.setup({
+				commands = {
+					OrganizeImports = {
+						organize_imports,
+						description = "Organize Imports",
+					},
+				},
+			})
+		end,
 	},
 })
 
