@@ -71,6 +71,9 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions tmux)
 
+# Tmux config
+export ZSH_TMUX_AUTOSTART=true
+
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zshrc.private
@@ -127,6 +130,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
 
 # Created by `pipx` on 2023-09-21 14:38:06
 export PATH="$PATH:/Users/progressandro-cc/Library/Python/3.11/bin"
