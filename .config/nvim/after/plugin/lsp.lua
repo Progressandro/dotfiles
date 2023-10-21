@@ -1,5 +1,20 @@
 local lsp_zero = require("lsp-zero")
 
+lsp_zero.configure("lua_ls", {
+	cmd = { "lua-language-server" },
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+				path = vim.split(package.path, ";"),
+			},
+			diagnostics = {
+				globals = { "vim" },
+			},
+		},
+	},
+})
+
 local function organize_imports()
 	local params = {
 		command = "_typescript.organizeImports",
@@ -19,15 +34,6 @@ lsp_zero.set_sign_icons({
 	warn = "▲",
 	hint = "⚑",
 	info = "»",
-})
-lsp_zero.format_mapping("<F3>", {
-	format_opts = {
-		async = false,
-		timeout_ms = 10000,
-	},
-	servers = {
-		["null-ls"] = { "javascript", "typescript", "lua" },
-	},
 })
 require("mason").setup({})
 require("mason-lspconfig").setup({
@@ -49,20 +55,50 @@ require("mason-lspconfig").setup({
 
 local null_ls = require("null-ls")
 
+local null_opts = lsp_zero.build_options("null-ls", {
+	on_attach = function(client)
+		if client.server_capabilities.documentFormattingProvider then
+			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ name = 'null-ls' })")
+		end
+	end,
+})
+local formatting = null_ls.builtins.formatting
+local lint = null_ls.builtins.diagnostics
+local action = null_ls.builtins.code_actions
+
 null_ls.setup({
+	on_attach = null_opts.on_attach,
 	sources = {
-		-- Replace these with the tools you want to install
-		-- make sure the source name is supported by null-ls
-		-- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
-		null_ls.builtins.formatting.prettierd,
-		null_ls.builtins.diagnostics.eslint,
-		null_ls.builtins.formatting.stylua,
+		-- formatting
+		formatting.prettierd, -- JavaScript / TypeScript
+		formatting.stylua, -- Lua
+
+		-- linting
+		lint.eslint_d, -- JavaScript / TypeScript
+
+		-- code actions
+		action.eslint_d, -- JavaScript / TypeScript
 	},
 })
+
+lsp_zero.setup()
+
+
+require('mason').setup({})
 
 -- See mason-null-ls.nvim's documentation for more details:
 -- https://github.com/jay-babu/mason-null-ls.nvim#setup
 require("mason-null-ls").setup({
 	ensure_installed = nil,
 	automatic_installation = true,
+})
+
+lsp_zero.format_mapping("<F3>", {
+	format_opts = {
+		async = false,
+		timeout_ms = 10000,
+	},
+	servers = {
+		["null-ls"] = { "javascript", "typescript", "lua" },
+	},
 })
