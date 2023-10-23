@@ -27,3 +27,5 @@ vim.opt.path = ".,src"
 vim.opt.suffixesadd = ".js,.jsx"
 vim.opt.path = ".,src"
 vim.opt.suffixesadd = ".js,.jsx"
+vim.opt.path = { ".", "src" }
+vim.opt.suffixesadd = { ".js", ".jsx" }
