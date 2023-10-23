@@ -41,7 +41,6 @@ return require("packer").startup(function(use)
 			"nvim-tree/nvim-web-devicons",
 		},
 	})
-	use("vimpostor/vim-tpipeline")
 	use("mbbill/undotree")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({
