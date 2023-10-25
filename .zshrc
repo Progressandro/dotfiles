@@ -121,7 +121,6 @@ alias kcc="kccf && kccb"
 alias ccm="cd ~/repositories/main-combocurve"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
 # bun completions
 [ -s "/Users/progressandro/.bun/_bun" ] && source "/Users/progressandro/.bun/_bun"
 
@@ -139,3 +138,11 @@ export PATH="$PATH:/Users/progressandro-cc/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+fbr() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
