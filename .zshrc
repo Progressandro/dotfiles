@@ -146,3 +146,9 @@ fbr() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/progressandro-cc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/progressandro-cc/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/progressandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/progressandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

@@ -29,3 +29,7 @@ vim.opt.suffixesadd = ".js,.jsx"
 vim.opt.path = { ".", "src" }
 vim.opt.suffixesadd = { ".js", ".jsx" }
 vim.opt.cmdheight = 0
+
+if vim.fn.executable("rg") then
+	vim.opt.grepprg = "rg --vimgrep"
+end
