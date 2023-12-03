@@ -1,1 +1,1 @@
-require('progressandro.init')
+require("progressandro.init")

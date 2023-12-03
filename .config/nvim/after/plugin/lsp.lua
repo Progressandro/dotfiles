@@ -27,7 +27,7 @@ end
 lsp_zero.on_attach(function(client, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
-	lsp_zero.default_keymaps({ buffer = bufnr })
+	lsp_zero.default_keymaps({ buffer = bufnr, preserve_mappings = false })
 end)
 lsp_zero.set_sign_icons({
 	error = "✘",
@@ -83,8 +83,7 @@ null_ls.setup({
 
 lsp_zero.setup()
 
-
-require('mason').setup({})
+require("mason").setup({})
 
 -- See mason-null-ls.nvim's documentation for more details:
 -- https://github.com/jay-babu/mason-null-ls.nvim#setup
