@@ -1,9 +1,9 @@
 require("nvim-treesitter.configs").setup({
-  build = ':TSUpdate',
-  events = {
-    'BufRead',
-    'BufNewFile',
-  },
+	build = ":TSUpdate",
+	events = {
+		"BufRead",
+		"BufNewFile",
+	},
 	autotag = {
 		enable = true,
 	},
@@ -29,13 +29,13 @@ require("nvim-treesitter.configs").setup({
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection: '<C-Space>',
-      node_incremental: '<C-Space>',
-      scope_incremental: false,
-      node_decremental: '<bs>',
-    }
-  }
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "<C-Space>",
+			node_incremental = "<C-Space>",
+			scope_incremental = false,
+			node_decremental = "<bs>",
+		},
+	},
 })
