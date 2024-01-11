@@ -10,3 +10,5 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- Center on found text
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+-- Soft escape
+vim.keymap.set("i", "<C-c>", "<Esc>")
