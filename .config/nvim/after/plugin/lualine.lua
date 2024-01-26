@@ -22,18 +22,6 @@ require("lualine").setup({
 	},
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = {
-			{
-				"branch",
-				fmt = function(str)
-					if str:len() > 20 then
-						return str:sub(1, 20) .. "..."
-					end
-					return str
-				end,
-			},
-			"diff",
-		},
 		lualine_c = { { "filename", path = 1 } },
 		lualine_x = { "diagnostics", "encoding", "fileformat", "filetype" },
 		lualine_y = {},
