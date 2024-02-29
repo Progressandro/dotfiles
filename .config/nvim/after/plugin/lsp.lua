@@ -100,4 +100,9 @@ lsp_zero.format_mapping("<F3>", {
 	servers = {
 		["null-ls"] = { "javascript", "typescript", "lua" },
 	},
+	mode = {
+		"n",
+		"x",
+		"i",
+	},
 })
