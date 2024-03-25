@@ -74,7 +74,7 @@ plugins=(git zsh-autosuggestions tmux)
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
-source $HOME/.zshrc.private
+# source $HOME/.zshrc.private
 # User configuration
 
 if type rg &> /dev/null; then
