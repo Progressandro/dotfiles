@@ -120,6 +120,7 @@ alias kccb="lsof -i tcp:8080 | awk 'NR!=1 {print $2}' | xargs kill"
 alias kcc="kccf && kccb"
 alias ccm="cd ~/repositories/main-combocurve"
 alias ccp="cd ~/repositories/python-combocurve"
+alias always_tmux="sh ~/.config/scripts/always_tmux.sh"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 # bun completions
@@ -159,3 +160,8 @@ if [ -f '/Users/progressandro/Downloads/google-cloud-sdk/path.zsh.inc' ]; then .
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/progressandro/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/progressandro/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
+	always_tmux && exit
+fi
