@@ -119,6 +119,7 @@ alias kccf="lsof -i tcp:3000 | awk 'NR!=1 {print $2}' | xargs kill"
 alias kccb="lsof -i tcp:8080 | awk 'NR!=1 {print $2}' | xargs kill"
 alias kcc="kccf && kccb"
 alias ccm="cd ~/repositories/main-combocurve"
+alias ccp="cd ~/repositories/python-combocurve"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 # bun completions
@@ -147,8 +148,14 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
+# Created by `pipx` on 2024-03-27 13:37:09
+export PATH="$PATH:/Users/progressandro/.local/bin"
+
+# Created by `pipx` on 2024-03-27 13:37:10
+export PATH="$PATH:/Users/progressandro/Library/Python/3.9/bin"
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/progressandro-cc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/progressandro-cc/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/progressandro/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/progressandro/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/progressandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/progressandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/progressandro/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/progressandro/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
