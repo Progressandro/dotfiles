@@ -69,7 +69,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions tmux)
+plugins=(git tmux)
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
@@ -123,45 +124,7 @@ alias ccp="cd ~/repositories/python-combocurve"
 alias always_tmux="sh ~/.config/scripts/always_tmux.sh"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-# bun completions
-[ -s "/Users/progressandro/.bun/_bun" ] && source "/Users/progressandro/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-
-# Created by `pipx` on 2023-09-21 14:38:06
-export PATH="$PATH:/Users/progressandro-cc/Library/Python/3.11/bin"
-
-# Created by `pipx` on 2023-09-21 14:38:07
-export PATH="$PATH:/Users/progressandro-cc/.local/bin"
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-fbr() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
-# Created by `pipx` on 2024-03-27 13:37:09
-export PATH="$PATH:/Users/progressandro/.local/bin"
-
-# Created by `pipx` on 2024-03-27 13:37:10
-export PATH="$PATH:/Users/progressandro/Library/Python/3.9/bin"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/progressandro/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/progressandro/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/progressandro/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/progressandro/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-
-if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
-	always_tmux && exit
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
 fi
