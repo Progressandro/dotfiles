@@ -122,9 +122,13 @@ alias kcc="kccf && kccb"
 alias ccm="cd ~/repositories/main-combocurve"
 alias ccp="cd ~/repositories/python-combocurve"
 alias always_tmux="sh ~/.config/scripts/always_tmux.sh"
+export PIP_PREFER_BINARY=1
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
