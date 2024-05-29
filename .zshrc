@@ -122,10 +122,8 @@ alias kcc="kccf && kccb"
 alias ccm="cd ~/repositories/main-combocurve"
 alias ccp="cd ~/repositories/python-combocurve"
 alias always_tmux="sh ~/.config/scripts/always_tmux.sh"
-export PIP_PREFER_BINARY=1
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc'; fi
