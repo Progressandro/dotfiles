@@ -130,3 +130,8 @@ if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Create a tmux session or attach to existing ones
+if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
+	always_tmux && exit
+fi
