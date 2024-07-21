@@ -124,7 +124,10 @@ alias ccp="cd ~/repositories/python-combocurve"
 alias always_tmux="sh ~/.config/scripts/always_tmux.sh"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
-
+export JAVA_HOME=$HOME/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
