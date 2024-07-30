@@ -98,4 +98,6 @@ return require("packer").startup(function(use)
 			"tpope/vim-fugitive",
 		},
 	})
+	use("tveskag/nvim-blame-line")
+	use("rhysd/reply.vim")
 end)

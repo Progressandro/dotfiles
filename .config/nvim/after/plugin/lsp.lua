@@ -89,7 +89,6 @@ require("mason").setup({})
 -- https://github.com/jay-babu/mason-null-ls.nvim#setup
 require("mason-null-ls").setup({
 	ensure_installed = nil,
-	automatic_installation = true,
 })
 
 lsp_zero.format_mapping("<F3>", {

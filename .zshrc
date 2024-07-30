@@ -111,7 +111,9 @@ bindkey '^I^I' autosuggest-accept
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
-alias nvconfig="cd ~/.config/nvim && nvim ."
+alias nvconfig="nvim ~/.config/nvim"
+alias tmuxconfig="nvim ~/.config/tmux"
+alias zshconfig="nvim ~/.zshrc"
 alias ys="yadm status"
 alias yp="yadm push"
 alias yam="cd ~ && yadm add $(yadm ls-files -m)"
@@ -124,17 +126,19 @@ alias ccp="cd ~/repositories/python-combocurve"
 alias always_tmux="sh ~/.config/scripts/always_tmux.sh"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+<<<<<<< HEAD
 export JAVA_HOME=$HOME/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export ESLINT_USE_FLAT_CONFIG=true eslint_d restart
 
 # Create a tmux session or attach to existing ones
 if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
 	always_tmux && exit
 fi
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/alejandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alejandro-cc/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
