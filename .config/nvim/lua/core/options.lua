@@ -1,6 +1,6 @@
 vim.cmd("colorscheme catppuccin")
 
-vim.opt.smartindent = true
+-- vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.g.have_nerd_font = true
 vim.opt.updatetime = 750
