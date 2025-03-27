@@ -1,5 +1,4 @@
 local install_root_dir = vim.fn.stdpath('data') .. "/mason/bin/"
-
 vim.lsp.config.typescript = {
   init_options = { hostInfo = 'neovim' },
   cmd = { install_root_dir .. 'typescript-language-server', '--stdio' },
@@ -46,5 +45,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
         end,
       })
     end
+    -- Show diagnostics on hover
+    vim.api.nvim_create_autocmd({ "CursorHold" }, {
+      callback = function()
+        vim.diagnostic.open_float({
+          scope = 'line',
+          focus = false,
+        })
+      end,
+    })
   end,
 })
