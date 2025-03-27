@@ -10,6 +10,7 @@ vim.bo.softtabstop = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
+vim.opt.smartindent = true
 
 -- Diagnostics options
 vim.diagnostic.config {
