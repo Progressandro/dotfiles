@@ -1,4 +1,4 @@
-local install_root_dir = vim.fn.stdpath('data') .."/mason/bin/" 
+local install_root_dir = vim.fn.stdpath('data') .. "/mason/bin/"
 
 vim.lsp.config.typescript = {
   init_options = { hostInfo = 'neovim' },
@@ -29,6 +29,22 @@ vim.lsp.config.lua = {
   },
 }
 
-vim.lsp.enable({'typescript', 'lua'})
+vim.lsp.enable({ 'typescript', 'lua' })
 
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if not client then return end
 
+    -- Format on save
+    if not client:supports_method('textDocument/willSaveWaitUntil')
+        and client:supports_method('textDocument/formatting') then
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        buffer = args.buf,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
+        end,
+      })
+    end
+  end,
+})
