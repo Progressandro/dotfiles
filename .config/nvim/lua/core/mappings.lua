@@ -3,6 +3,19 @@ vim.keymap.set('i', '<C-c>', '<Esc>');
 vim.keymap.set('n', '<leader>e', '<CMD>:Oil --float<CR>')
 vim.keymap.set('n', '<Esc>', '<Esc>:noh<CR>', { silent = true })
 
+-- Copilot
+vim.g.copilot_no_tab_map = true
+vim.keymap.set('i', '<C-A>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.keymap.set('i', '<C-S>', '<Plug>(copilot-accept-line)', {
+})
+vim.keymap.set('i', '<C-D>', '<Plug>(copilot-accept-word)', {
+})
+vim.keymap.set('i', '<C-F>', '<Plug>(copilot-next)', {
+})
+
 -- Open references without focusing on quickfix list
 vim.keymap.set("n", "grr", function()
   local win = vim.api.nvim_get_current_win()
