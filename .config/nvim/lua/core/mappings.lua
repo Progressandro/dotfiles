@@ -1,5 +1,7 @@
 vim.g.mapleader = ' '
+vim.keymap.set('i', '<C-c>', '<Esc>');
 vim.keymap.set('n', '<leader>e', '<CMD>:Oil --float<CR>')
+vim.keymap.set('n', '<Esc>', '<Esc>:noh<CR>', { silent = true })
 
 -- Open references without focusing on quickfix list
 vim.keymap.set("n", "grr", function()
@@ -20,6 +22,12 @@ vim.keymap.set('n', '<leader>q', function()
   local action = qf_winid > 0 and 'cclose' or 'copen'
   vim.cmd('botright ' .. action)
 end, noremap_silent)
+
+-- Center
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 
 -- Harpoon
