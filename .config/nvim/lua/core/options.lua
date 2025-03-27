@@ -1,4 +1,5 @@
 vim.cmd("colorscheme catppuccin")
+vim.opt.updatetime = 750
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
