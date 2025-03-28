@@ -3,6 +3,13 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader>e", "<CMD>:Oil --float<CR>")
 vim.keymap.set("n", "<Esc>", "<Esc>:noh<CR>", { silent = true })
 
+-- LSP
+vim.keymap.set("n", "<leader>gd", "<CMD>lua vim.lsp.buf.definition()<CR>")
+vim.keymap.set("n", "<leader>gr", "<CMD>lua vim.lsp.buf.references()<CR>")
+vim.keymap.set("n", "<leader>gi", "<CMD>lua vim.lsp.buf.implementation()<CR>")
+vim.keymap.set("n", "<leader>ca", "<CMD>lua vim.lsp.buf.code_action()<CR>")
+vim.keymap.set("n", "<leader>cr", "<CMD>lua vim.lsp.buf.rename()<CR>")
+
 -- Persistence
 vim.keymap.set("n", "<leader>sl", function()
 	require("persistence").load({ last = true })
