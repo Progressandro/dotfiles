@@ -8,7 +8,6 @@ return {
 				timeout_ms = 500,
 				lsp_format = "fallback",
 			},
-			log_level = vim.log.levels.DEBUG,
 			formatters_by_ft = {
 				-- Use a sub-list to run only the first available formatter
 				javascript = { "prettierd", "prettier" },
