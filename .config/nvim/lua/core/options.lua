@@ -11,6 +11,7 @@ vim.bo.softtabstop = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
+vim.opt.cmdheight = 0
 
 -- Diagnostics options
 vim.diagnostic.config({
