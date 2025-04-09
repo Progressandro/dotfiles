@@ -112,6 +112,7 @@ bindkey '^I^I' autosuggest-accept
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="clear"
 alias nvconfig="cd ~/.config/nvim && nvim ."
+alias cdnvconfig="cd ~/.config/nvim"
 alias ys="yadm status"
 alias yp="yadm push"
 alias yam="cd ~ && yadm add $(yadm ls-files -m)"
